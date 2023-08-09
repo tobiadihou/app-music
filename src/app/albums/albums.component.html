@@ -1,0 +1,35 @@
+<div class="row content">
+  <div class="col-sm-4">
+      <app-albums-details></app-albums-details>
+  </div>
+
+  <div class="col-sm-4">
+      {{titlePage}}
+      <div class="card" *ngFor="let album of albums">
+          <div class="card-header">
+              rap
+          </div>
+
+          <div class="card-body">
+              <h5 class="card-title">{{album.title}}</h5>
+              <p class="card-text">{{album.description}}</p>
+              <ul class="list-inline" *ngIf="album.tags">
+                  <li class="list-inline-item" *ngFor="let tag of album.tags">
+                      <span class="badge bg-info">{{tag}}</span>
+                  </li>
+              </ul>
+              <a href="" class="btn btn-outline-dark">en</a>
+              <ng-template [ngIf]="album.like">
+                  <img src="../../assets/svg/si-glyph-heart.svg" alt="like icon" style="width: 2rem;">
+              </ng-template>
+
+              <ng-template [ngIf]="album.duration">
+                  <img src="../../assets/svg/si-glyph-timer.svg" alt="time icon" style="width: 2rem;">
+              </ng-template>
+
+              <button class="btn btn-dark">détails</button>
+          </div>
+      </div>
+  </div>
+</div>
+
