@@ -4,14 +4,14 @@
   </div>
 
   <div class="col-sm-4">
-      {{titlePage}}
+      <h1>{{titlePage}}</h1>
       <div class="card" *ngFor="let album of albums">
           <div class="card-header">
-              rap
+            <h5 class="card-title">{{album.title}}</h5>
           </div>
 
           <div class="card-body">
-              <h5 class="card-title">{{album.title}}</h5>
+
               <p class="card-text">{{album.description}}</p>
               <ul class="list-inline" *ngIf="album.tags">
                   <li class="list-inline-item" *ngFor="let tag of album.tags">
@@ -21,10 +21,12 @@
               <a href="" class="btn btn-outline-dark">en</a>
               <ng-template [ngIf]="album.like">
                   <img src="../../assets/svg/si-glyph-heart.svg" alt="like icon" style="width: 2rem;">
-              </ng-template>
+                  <span>{{album.like}}</span>
+                </ng-template>
 
-              <ng-template [ngIf]="album.duration">
+                <ng-template [ngIf]="album.duration">224
                   <img src="../../assets/svg/si-glyph-timer.svg" alt="time icon" style="width: 2rem;">
+                  <span>{{album.duration}}</span>
               </ng-template>
 
               <button class="btn btn-dark">détails</button>
